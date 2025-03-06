@@ -19,6 +19,6 @@ Malicious containers frequently contain cryptominers—software that hijacks sys
 Attackers are not just dumping malware into containers and hoping for the best. They use advanced obfuscation methods, such as embedding payloads deep within container layers or dynamically downloading malicious components at runtime. This makes detection significantly harder, especially for security tools that rely solely on static analysis.  
 
 ## A Real-World Example: `ynprpagamentitk/liferay`  
-One particularly interesting case is the `ynprpagamentitk/liferay` image, which was discovered to contain a hidden cryptominer. At first glance, it appeared to be a legitimate container, but under the surface, it was designed to exploit system resources for unauthorized cryptocurrency mining.  
+One particularly interesting case is the [`ynprpagamentitk/liferay`](https://hub.docker.com/r/ynprpagamentitk/liferay) image, which was discovered to contain a hidden cryptominer. At first glance, it appeared to be a legitimate container, but under the surface, it was designed to exploit system resources for unauthorized cryptocurrency mining.  
 
 In the next section, we’ll take a closer look at this image—breaking down how it was constructed, what it does, and the techniques the attacker used to stay under the radar.  

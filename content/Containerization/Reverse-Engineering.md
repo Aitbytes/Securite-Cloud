@@ -31,8 +31,8 @@ To gain a clearer understanding of the image’s construction, I made several re
    - Since these layers were standard optimizations, I excluded them from the refined Dockerfile.  
 
 3. **Fixing the Mining Software Installation**  
-   - The original Dockerfile referenced a now-defunct GitHub repository (`OhGodAPet/cpuminer-multi`).  
-   - After investigating similar projects, I found that `tpruvot/cpuminer-multi` was the correct, actively maintained fork.  
+   - The original Dockerfile referenced a deleted GitHub repository (`OhGodAPet/cpuminer-multi`).  
+   - After investigating similar projects, I found that [`tpruvot/cpuminer-multi`](https://github.com/tpruvot/cpuminer-multi) was the correct, actively maintained fork.  
    - I updated the repository reference to ensure that the miner could still be built.  
 
 4. **Simplifying the Build Process**  

@@ -13,14 +13,14 @@ docker history ynprpagamentitk/liferay
 This reveals a series of layers that give us insight into the image’s construction. Below is a truncated version of the output:  
 
 ```
-IMAGE        CREATED BY                                      SIZE  
-090c15b354ad /bin/sh -c #(nop) ENTRYPOINT ["/bin/minerd"... 0B  
-<missing>    /bin/sh -c chmod 755 /bin/minerd               179kB  
-<missing>    /bin/sh -c #(nop) ADD file:afde9ecdee7c...     179kB  
-<missing>    /bin/sh -c #(nop) WORKDIR /cpuminer-multi      0B  
-<missing>    /bin/sh -c cd cpuminer-multi && ...           2.1MB  
-<missing>    /bin/sh -c git clone https://github.com/Oh... 1.05MB  
-<missing>    /bin/sh -c apt-get update -qq && ...         317MB  
+IMAGE           CREATED BY                                      SIZE  
+090c15b354ad    /bin/sh -c #(nop) ENTRYPOINT ["/bin/minerd"...  0B  
+<missing>       /bin/sh -c chmod 755 /bin/minerd                179kB  
+<missing>       /bin/sh -c #(nop) ADD file:afde9ecdee7c...      179kB  
+<missing>       /bin/sh -c #(nop) WORKDIR /cpuminer-multi       0B  
+<missing>       /bin/sh -c cd cpuminer-multi && ...             2.1MB  
+<missing>       /bin/sh -c git clone https://github.com/Oh...   1.05MB  
+<missing>       /bin/sh -c apt-get update -qq && ...            317MB  
 ```  
 
 From this, we can already spot some red flags. The image installs various build tools, downloads and compiles `cpuminer-multi`, and ultimately deploys a binary called `minerd`. The presence of an `ENTRYPOINT` configured to launch `minerd` automatically suggests that this container is designed for cryptojacking—using system resources to mine cryptocurrency without user consent.  
@@ -32,13 +32,13 @@ To better understand the image, we need to determine which base operating system
 To confirm this, we analyze the early layers of the container:  
 
 ```
-IMAGE        CREATED BY                                      SIZE  
-ebcd9d4fca80 /bin/sh -c #(nop) CMD ["/bin/bash"]            0B  
-<missing>    /bin/sh -c mkdir -p /run/systemd && echo '...  7B  
-<missing>    /bin/sh -c sed -i 's/^#\s*\(deb.*universe\)... 2.76kB  
-<missing>    /bin/sh -c rm -rf /var/lib/apt/lists/*        0B  
-<missing>    /bin/sh -c set -xe && echo '#!/bin/sh' >...  745B  
-<missing>    /bin/sh -c #(nop) ADD file:d14b493577228a4... 118MB  
+IMAGE           CREATED BY                                      SIZE  
+ebcd9d4fca80    /bin/sh -c #(nop) CMD ["/bin/bash"]             0B  
+<missing>       /bin/sh -c mkdir -p /run/systemd && echo '...   7B  
+<missing>       /bin/sh -c sed -i 's/^#\s*\(deb.*universe\)...  2.76kB  
+<missing>       /bin/sh -c rm -rf /var/lib/apt/lists/*          0B  
+<missing>       /bin/sh -c set -xe && echo '#!/bin/sh' >...     745B  
+<missing>       /bin/sh -c #(nop) ADD file:d14b493577228a4...   118MB  
 ```  
 
 By comparing these layers with the known Ubuntu `xenial-20170510` image, we see that the first six layers match exactly. This confirms that the base image is unmodified and that these optimizations—such as disabling auto-starting services, enabling extra package sources, and removing cached package lists—are simply standard Ubuntu container adjustments.  
