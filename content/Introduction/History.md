@@ -6,7 +6,7 @@ title: History of cloud computing
 
 Ever wondered how today's cloud computing began its journey? Let's take a trip back to the 1960s, when it all started with a visionary idea. Imagine computing power being as easy to access as electricity or water. Sounds familiar? That's because computer scientist John McCarthy planted this seed long ago with the concept of utility computing. Little did he know, this idea would pave the way for the cloud services we rely on today.
 
-But how did this vision turn into a reality? It all started with early pioneers like IBM and MIT, who, in the early 1960s, developed the Compatible Time-Sharing System (CTSS). This system was a game-changer—it allowed multiple users to harness the power of a mainframe computer simultaneously. In other words, it was the first glimpse of sharing computing resources.
+But how did this vision turn into a reality? It all started with early pioneers like IBM and MIT, who, in the early 1960s, developed the [Compatible Time-Sharing System (CTSS)](https://fr.wikipedia.org/wiki/Compatible_Time_Sharing_System). This system was a game-changer—it allowed multiple users to harness the power of a mainframe computer simultaneously. In other words, it was the first glimpse of sharing computing resources.
 
 Moving into the 1960s and 1970s, IBM took things a step further with virtualization technology. By developing operating systems like CP-67 and VM/370, IBM enabled several operating systems to run on one physical machine. Why was this important? Because sharing resources efficiently through virtualization became a cornerstone of cloud computing, allowing us to scale resources up or down as needed with ease.
 
