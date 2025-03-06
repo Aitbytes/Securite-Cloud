@@ -13,7 +13,9 @@ Moving into the 1960s and 1970s, IBM took things a step further with virtualizat
 
 And what about the term ‘cloud’? It wasn't until the 1990s that 'cloud' became a buzzword [3](https://www.educative.io/blog/cloud-computing-benefits-challanges-best-practices)[4](https://www.fynd.academy/blog/cloud-computing-case-study) in the world of distributed computing. As the internet blossomed, early remote services like file sharing and email showed us the potential of accessing resources over a network.
 
+
 # Early 2000s : Laying the Groundwork
+
 
 Imagine a world transitioning from clunky software CDs to seamless online access. In the early 2000s, this shift began with companies like Salesforce leading the charge. In 1999, they introduced Software as a Service (SaaS), allowing businesses to manage customer relationships directly through the web. This was a game-changer—why worry about installing software when you can access it anytime, anywhere?
 
@@ -35,7 +37,7 @@ Back in the early 2010s, things really started to pick up momentum. In 2011, IBM
 
 Fast forward to 2013, and a game-changing development came about—Docker. Docker didn’t just introduce containerization; it made deploying applications across various cloud environments as easy as pie. This laid the groundwork for what we now know as microservices architectures.
 
-Yet, it wasn’t all smooth sailing. Remember the 2014 iCloud data breaches? Those incidents reminded everyone of the security vulnerabilities lurking in cloud storage services and caused a temporary dip in user trust. On the flip side, Netflix's complete migration to AWS showed just how scalable and robust cloud services could be for high-demand platforms.
+Yet, it wasn’t all smooth sailing. Remember the 2014 [[iCloud]] data breaches? Those incidents reminded everyone of the security vulnerabilities lurking in cloud storage services and caused a temporary dip in user trust. On the flip side, Netflix's complete migration to AWS showed just how scalable and robust cloud services could be for high-demand platforms.
 
 Cloud reliability came under scrutiny as well, with infamous service outages like AWS’s downtime in 2012 raising eyebrows. And what about vendor lock-in? Many organizations started to feel the pinch when attempting to switch providers. It was a mixed bag of advancements and challenges, wasn't it?
 
