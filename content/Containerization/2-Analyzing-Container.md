@@ -1,8 +1,10 @@
-# Investigating a Malicious Docker Image  
+---
+title: Investigating a Malicious Docker Image 
+---
 
-When analyzing a potentially malicious Docker image like `ynprpagamentitk/liferay`, the first step is to inspect its Docker history. This helps us understand how the image was built, layer by layer, and identify any suspicious modifications.  
+When analyzing a potentially malicious Docker image like [`ynprpagamentitk/liferay`](https://hub.docker.com/r/ynprpagamentitk/liferay), the first step is to inspect its Docker history. This helps us understand how the image was built, layer by layer, and identify any suspicious modifications.  
 
-## Examining the Image Layers  
+# Examining the Image Layers  
 
 We start by running the following command:  
 
@@ -25,7 +27,7 @@ IMAGE           CREATED BY                                      SIZE
 
 From this, we can already spot some red flags. The image installs various build tools, downloads and compiles `cpuminer-multi`, and ultimately deploys a binary called `minerd`. The presence of an `ENTRYPOINT` configured to launch `minerd` automatically suggests that this container is designed for cryptojacking—using system resources to mine cryptocurrency without user consent.  
 
-## Understanding the Base Image  
+# Understanding the Base Image  
 
 To better understand the image, we need to determine which base operating system it was built on. Using **Docker Scout**, we identify that the image is based on `ubuntu:xenial-20170510`. This is an important finding because it means the initial layers of the container should match those from the official Ubuntu base image.  
 
@@ -43,7 +45,7 @@ ebcd9d4fca80    /bin/sh -c #(nop) CMD ["/bin/bash"]             0B
 
 By comparing these layers with the known Ubuntu `xenial-20170510` image, we see that the first six layers match exactly. This confirms that the base image is unmodified and that these optimizations—such as disabling auto-starting services, enabling extra package sources, and removing cached package lists—are simply standard Ubuntu container adjustments.  
 
-## Investigating Suspicious Additions  
+# Investigating Suspicious Additions  
 
 One of the more mysterious elements in this image is the `ADD` command, which introduces a file labeled `file:d14b493577228a498919faab376609c73048c0220b06d2989ecaaf1bdc17cf6c`. To determine what changes this file made, we used the **Dive** tool, which revealed that it modified multiple system directories, including:  
 
@@ -58,7 +60,7 @@ One of the more mysterious elements in this image is the `ADD` command, which in
 
 At first, these modifications raised concerns about potential malicious activity. However, after further inspection, we found that these were typical optimizations made to improve container performance and were not introducing malware.  
 
-## Source Code and Binary Injection  
+# Source Code and Binary Injection  
 
 The final layers of the Docker image give us the clearest indication of its malicious intent:  
 
@@ -83,7 +85,7 @@ Here's what happens in this sequence:
 
 Interestingly, the original repository (`https://github.com/OhGodAPet/cpuminer-multi`) no longer exists. However, a search for similar repositories led us to `https://github.com/tpruvot/cpuminer-multi`, which shares the same name and command-line arguments.  
 
-## Conclusion  
+# Conclusion  
 
 From our investigation, it’s clear that this container was specifically designed for cryptojacking. The attacker built the image to install, compile, and run a Monero miner inside a container, then uploaded it to a public registry under a misleading name. The clever use of an `ENTRYPOINT` ensures that the miner starts automatically whenever the container is run, effectively hijacking system resources for unauthorized cryptocurrency mining.  
 
