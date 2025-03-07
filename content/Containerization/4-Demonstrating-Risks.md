@@ -1,5 +1,5 @@
 ---
-title: Demonstrating the Risks of Malicious Docker Images
+title: 4 - Demonstrating the Risks of Malicious Docker Images
 ---
 
 What if the Docker image you just pulled contained hidden malware? Our analysis of the [`ynprpagamentitk/liferay`](https://hub.docker.com/r/ynprpagamentitk/liferay) image reveals just how easily attackers can sneak malicious software—such as cryptominers—into public container registries like Docker Hub. By reverse-engineering this image and reconstructing its Dockerfile, we’ve shown that creating and distributing a harmful container is surprisingly simple.  

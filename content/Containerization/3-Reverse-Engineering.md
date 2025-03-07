@@ -1,5 +1,5 @@
 ---
-title: Reverse-Engineering a Malicious Dockerfile  
+title: 3 - Reverse-Engineering a Malicious Dockerfile  
 ---
 
 Ever wondered how a malicious Docker image is built? By reverse-engineering its Dockerfile, we can uncover the attacker's thought process and gain valuable insights into how these images operate. To do this, I used **dfimage**, a tool from GitHub that reconstructs a Dockerfile based on the metadata and structure of an image. While the initial output wasn’t perfect, it provided a solid starting point:  

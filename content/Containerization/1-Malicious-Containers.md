@@ -1,5 +1,5 @@
 ---
-title: Malicious Containers Spreading Through Public Registries  
+title: 1 - Malicious Containers Spreading Through Public Registries  
 ---
 
 Public container registries like Docker Hub have revolutionized software distribution, making it easier than ever to deploy and share applications. But have you ever considered the security risks that come with this convenience? Unfortunately, attackers are taking advantage of these registries to spread malicious container images, embedding cryptominers, backdoors, and other forms of malware inside what appear to be legitimate software packages.  

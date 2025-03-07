@@ -1,5 +1,5 @@
 ---
-title: Investigating a Malicious Docker Image 
+title: 2 - Investigating a Malicious Docker Image 
 ---
 
 When analyzing a potentially malicious Docker image like [`ynprpagamentitk/liferay`](https://hub.docker.com/r/ynprpagamentitk/liferay), the first step is to inspect its Docker history. This helps us understand how the image was built, layer by layer, and identify any suspicious modifications.  
