@@ -1,6 +1,17 @@
 ---
 title: History of cloud computing
 ---
+```mermaid
+timeline
+    title History of Social Media Platform
+    1960s–1990s : Early Concepts and Foundations
+    2000–2005 : Establishing the Foundations
+	2006–2010: The Emergence of Modern Cloud Computin
+	2011–2015: Expansion and Specialization
+	2016–2020: Maturation and Technological Breakthrough
+	2021–2024: AI, Sustainability, and Complexit
+```
+
 
 # The Roots of Cloud Computing (1960s–1990s)
 
@@ -64,3 +75,33 @@ But, it's not all smooth sailing. The demand for specialized skills in cloud gov
 Curious about how some major players have thrived in the cloud landscape? Take Amazon Web Services (AWS), for example. It has been instrumental in the success of countless organizations. Remember Netflix? They've harnessed [AWS’s machine learning capabilities](https://siliconvalley.center/blog/success-stories-industry-cloud-platforms-in-action) to create personalized user experiences, boosting customer satisfaction and loyalty. Then there's Airbnb, which turned to AWS to manage its massive data needs. The scalability and flexibility of the cloud have allowed them to keep pace with their rapid growth, as further detailed in [industry success stories](https://hawatel.com/en/blog/how-do-large-companies-use-aws-success-stories-of-netflix-slack-airbnb-and-expedia).
 
 
+```mermaid
+timeline
+    title Cloud Computing Timeline
+
+    1960s: John McCarthy proposes utility computing.
+    1960s: IBM and MIT develop the Compatible Time-Sharing System (CTSS).
+    1960s-1970s: IBM advances virtualization technology with CP-67 and VM/370.
+    1990s: The term 'cloud' becomes associated with distributed computing.
+
+    1999: Salesforce pioneers Software as a Service (SaaS).
+    2002: Amazon launches Amazon Web Services (AWS).
+    2004: Google introduces Gmail.
+    
+    2006: AWS launches Elastic Compute Cloud (EC2) and Simple Storage Service (S3).
+    2008: Google introduces Google App Engine.
+    2010: Microsoft launches Azure.
+
+    2011: IBM introduces SmartCloud.
+    2013: Docker popularizes containerization.
+    2014: iCloud data breaches occur.
+    2012: AWS experiences downtime.
+    
+    2016: Kubernetes becomes the standard for container orchestration.
+    2017: Serverless computing gains traction with AWS Lambda.
+    2019: Multi-cloud strategies surge.
+    2019: Capital One data breach highlights security vulnerabilities.
+    
+    2021: 87% of enterprises adopt hybrid cloud strategies.
+    2024: Major cloud providers reach carbon-neutral milestones.
+```
