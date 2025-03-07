@@ -19,40 +19,6 @@ Think of cloud as a blend of hardware and software components—like servers and
 4. **Rapid Elasticity:** As your needs grow or shrink, the cloud adjusts instantly, almost like magic!
     
 5. **Measured Service:** This is akin to paying your utility bills. You only get charged for what you use, and both you and your provider can track usage.
-    
-
-**Protecting Your Data: Security Principles in Cloud Infrastructure**
-
-When it comes to security, the cloud has you covered with several robust principles:
-
-- **Data Encryption:** This is like locking up your valuables. Your data stays secure, whether it's on the move or at rest.
-    
-- **Identity and Access Management (IAM):** Similar to a bouncer at a club, only specific, authorized people get access.
-    
-- **Regular Auditing and Monitoring:** This keeps an eye on everything to highlight anything fishy and ensure compliance with security rules.
-    
-- **Shared Responsibility Model:** Security isn’t just the provider’s job. It’s a team effort between you and the provider, with clearly defined roles.
-    
-
-**How Does Cloud Compare to Other Setups?**
-
-Let's see how the cloud stacks up against other computing environments:
-
-1. **Traditional On-Premises Computing:**
-    
-    - You own everything, but it’s like buying a house; you handle all maintenance and upgrades.
-    - Scaling up means a hefty investment in new hardware.
-    - Full control over security is yours, but so is the responsibility for it.
-2. **Colocation Data Centers:**
-    
-    - You own the gear but rent the space.
-    - Adding hardware and space can slow down your scaling efforts.
-    - The data center offers physical security, but data security is up to you.
-3. **Managed Hosting Services:**
-    
-    - It’s like leasing a car; providers own the hardware.
-    - Scaling is easier than on-prem but can still take time.
-    - While providers offer security services, ensure they meet your specific needs.
 
 
 ```mermaid
@@ -72,15 +38,44 @@ mindmap
 		Shared Reponsibilty Model
 			Customer Responsibilities
 				Data confidentiality and intergrity
-					Sensitive Data exposure
-					Unencrypted data
-					Misconfigured storage buckets
 				Identity and access management
-					Insecure APIs
-					Weak Authentication
 				Application-level controls and configurations
-					Unpatched systems
-				Commmon shortcommings
 			Provider Responsibilites
+				X 
+				Y
+				Z
+			Models
+				SaaS
+				IaaS
+				FaaS
+				PaaS
+		Technologies
+			Physical Infrastructure
+			Virtualisation
+			Containerization
+			Microservices
+			Orchestration
+			Serverless
+			Web Application
+			Data pipelines
+		Identity and Access Management (IAM)
+			Authorisation and Authentication
+			Zero trust
+		Compliance and Regulatory Governance
+			GDPR
+			
 ```
+
+
+```mermaid
+mindmap
+	root((Cloud Security))
+		Technologies
+			Containerization
+				Registries
+				Orchestration
+			Virtualization
+
+```
+
 

@@ -3,7 +3,7 @@ title: History of cloud computing
 ---
 ```mermaid
 timeline
-    title History of Social Media Platform
+    title History of Cloud adoption
     1960s–1990s : Early Concepts and Foundations
     2000–2005 : Establishing the Foundations
 	2006–2010: The Emergence of Modern Cloud Computin
