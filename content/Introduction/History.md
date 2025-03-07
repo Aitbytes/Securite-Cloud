@@ -35,7 +35,7 @@ Back in the early 2010s, things really started to pick up momentum. In 2011, IBM
 
 Fast forward to 2013, and a game-changing development came about—[Docker](https://www.docker.com/resources/what-container/). Docker didn’t just introduce containerization; it made deploying applications across various cloud environments as easy as pie. This laid the groundwork for what we now know as microservices architectures.
 
-Yet, it wasn’t all smooth sailing. Remember the 2014 [iCloud data breaches](https://en.wikipedia.org/wiki/2014_celebrity_nude_photo_leak)? Those incidents reminded everyone of the security vulnerabilities lurking in cloud storage services and caused a temporary dip in user trust. On the flip side, [Netflix's complete migration to AWS](https://about.netflix.com/news/completing-the-netflix-cloud-migration) showed just how scalable and robust cloud services could be for high-demand platforms.
+Yet, it wasn’t all smooth sailing. Remember the 2014 [[ iCloud | iCloud Data Breach]] ? Those incidents reminded everyone of the security vulnerabilities lurking in cloud storage services and caused a temporary dip in user trust. On the flip side, [Netflix's complete migration to AWS](https://about.netflix.com/news/completing-the-netflix-cloud-migration) showed just how scalable and robust cloud services could be for high-demand platforms.
 
 Cloud reliability came under scrutiny as well, with infamous service outages like [AWS’s downtime in 2012](https://aws.amazon.com/message/680342/) raising eyebrows. And what about [vendor lock-in](https://www.cloudflare.com/learning/cloud/what-is-vendor-lock-in/)? Many organizations started to feel the pinch when attempting to switch providers. It was a mixed bag of advancements and challenges, wasn't it?
 
@@ -48,7 +48,7 @@ Then came 2017 with the rise of [serverless computing](https://aws.amazon.com/la
 
 By 2019, [multi-cloud strategies](https://www.cloudflare.com/fr-fr/learning/cloud/what-is-multicloud/) were the name of the game. Organizations wanted to spread their wings and reduce reliance on any single provider for better resilience. Cloud providers didn’t just sit back; they integrated AI and machine learning to enhance analytics and automation, laying the ground for more intelligent cloud services. Did you notice edge computing making waves too? It started working hand-in-hand with centralized cloud systems to drastically cut down on latency for critical applications.
 
-However, there were lessons to be learned. The [Capital One data breach in 2019](https://www.zscaler.com/resources/white-papers/capital-one-data-breach.pdf), due to misconfigured AWS settings, was a stark reminder of the ongoing security challenges. And rising operational costs led to 23% budget overruns — definitely a wake-up call for improved resource management.
+However, there were lessons to be learned. The [[Capital_One | Capital One data breach in 2019]] , due to misconfigured AWS settings, was a stark reminder of the ongoing security challenges. And rising operational costs led to 23% budget overruns — definitely a wake-up call for improved resource management.
 
 # **2021–2024: Embracing AI, Sustainability, and Complexity in the Cloud** 
 
