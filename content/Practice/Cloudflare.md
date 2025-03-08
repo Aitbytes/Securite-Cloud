@@ -6,7 +6,7 @@ title: Setting up DNS with Cloudflare
 Before executing the Terraform script, you need to set up Cloudflare and obtain the necessary credentials. Follow these steps:
 
 >[!info]
->This step assume you've already bought a domain from a provider.
+>These instructions assume you've already bought a domain from some provider.
 
 #### Step 1: Create a Cloudflare Account
 
