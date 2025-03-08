@@ -1,112 +1,110 @@
 ---
 title: 1-Setting up an environement
 ---
-## Objective
+## Getting Started with Authorizations in Google Cloud: A Step-by-Step Guide
 
-Our goal is to create a standard cloud infrastructure, and leverage our understanding to highlight and exploit the vulnerabilities we would have left behind.
+Hey there! Ready to dive into setting up your Google Cloud project? If you're new to cloud security, don’t worry—we’re here to walk you through it. Let’s break down the process together, starting with creating your project and setting up essential permissions.
 
-Throughout the labs, we will be leveraging IaC with terraform and ansible extensively, as it self-documents every step, while also making our configurations easily repeatable.
+### Step 1: Create Your Google Cloud Project
 
-## Setting up authorisations
-### Step 1: Create a Google Cloud Project
+First things first, you'll need a project to get started. Here’s how you can create one:
 
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
-2. Click on the project drop-down menu at the top of the page.
-3. Click on "New Project" to create a new project.
-4. Enter a name for your project and select a billing account.
-5. Click "Create" to finalize the project creation.
+1. Head over to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Notice the project drop-down menu at the top? Click on it.
+3. Click "New Project" to kick off your creation process.
+4. Think of a cool name for your project and select a billing account.
+5. Hit "Create" and voilà, your project is ready to roll!
 
-![[unnamed.png]]
+![Google Cloud Project creation example](unnamed.png)
 
-### Step 2: Set Up a Service Account
+### Step 2: Crafting a Service Account
 
-1. In the Google Cloud Console, navigate to the "IAM & Admin" section.
-2. Click on "Service Accounts" in the left-hand menu.
-3. Click "Create Service Account" at the top of the page.
-4. Enter a name and description for the service account.
-5. Click "Create and Continue".
-6. Assign the necessary roles to the service account:
+Next, let’s set up a service account to manage permissions. Don’t worry; we’ll keep it simple!
+
+1. In the Google Cloud Console, swing by the "IAM & Admin" section.
+2. On the left, click "Service Accounts."
+3. You'll spot "Create Service Account" at the top—click it.
+4. Give your service account a name and description. Easy, right?
+5. Click "Create and Continue."
+6. It's time for roles! Assign these roles to your service account to give it the right permissions:
    - **Compute Viewer** (`roles/compute.viewer`)
    - **Compute Instance Admin (v1)** (`roles/compute.instanceAdmin.v1`)
    - **Compute OS Admin Login** (`roles/compute.osAdminLogin`)
    - **Compute Security Admin** (`roles/compute.securityAdmin`)
    - **Compute Image User** (`roles/compute.imageUser`)
    - **Service Account User** (`roles/iam.serviceAccountUser`)
-7. Click "Done" to complete the service account setup.
+7. Click "Done" to wrap up the setup.
 
 ---
 
-You should have something similar to this following in the "IAM & Admin" > "IAM" section 
+Take a look in the "IAM & Admin" > "IAM" section—you’ve just crafted a robust configuration, like this one:
 
 ![[Pasted image 20250308020706.png]]
-As you can see, we attributed the following rôles to the service account : 
-- **Compute Viewer** (`roles/compute.viewer`):
-    
-    - This role allows users to view Compute Engine resources but not to modify them. It's useful for monitoring and auditing purposes.
-- **Compute Instance Admin (v1)** (`roles/compute.instanceAdmin.v1`):
-    
-    - Provides permissions required to create, modify, and delete VM instances. Specifically, this role allows actions such as starting, stopping, and rebooting instances.
-- **Compute OS Admin Login** (`roles/compute.osAdminLogin`):
-    
-    - This role allows users to connect to VM instances running Linux by granting administrator access via SSH.
-- **Compute Security Admin** (`roles/compute.securityAdmin`):
-    
-    - Required to manage firewall rules and other security-related configurations, which might be necessary depending on your deployment and network setup.
-- **Compute Image User** (`roles/compute.imageUser`):
-    
-    - Grants permission to use images to create and start instances. This role is essential when deploying instances from specific Linux images.
-- **Service Account User** (`roles/iam.serviceAccountUser`):
-    
-    - Necessary to allow the deployment process to act as a service account. This is needed if instances are using service accounts for authentication to other Google Cloud services.
+
+Wondering why these roles are important? Let’s break it down:
+
+- **Compute Viewer** lets you view resources without altering them—perfect for keeping an eye on things.
+- **Compute Instance Admin (v1)** empowers you to manage VM instances, like starting or stopping them.
+- **Compute OS Admin Login** allows secure SSH connections to your Linux VM instances.
+- **Compute Security Admin** is key for managing firewall rules and security settings.
+- **Compute Image User** helps in deploying instances from specific images.
+- **Service Account User** lets your deployment process utilize a service account for other Google Cloud services.
 
 >[!warning]
-> - Limit the use of the service account to specific tasks that absolutely require it. Avoid using it for general purposes, thereby respecting the principle of least privilege 
+>Remember: It’s best to keep tasks specific to the service account to ensure security. Stick to the principle of least privilege!
 
-## Automating further deployments
+## Automating Your Deployments: Enter OpenTofu
 
-Make sure you have Terraform or OpenTofu installed. Follow the specific [instructions for Terraform](https://developer.hashicorp.com/terraform/install) or [instructions for OpenTofu](https://opentofu.org/docs/intro/install) for your system. We will be using OpenTofu as it is open-source.
+Ready to make things even smoother? Automating deployments is the way to go. Here's how to gear up for it:
 
-#### Step 1: Activate the Cloud Resource Manager API
+First, confirm you have Terraform or OpenTofu installed. Follow the detailed [Terraform instructions](https://developer.hashicorp.com/terraform/install) or [OpenTofu instructions](https://opentofu.org/docs/intro/install) to get set up. We’ll go with OpenTofu because it’s open-source and user-friendly.
 
-1. In the Google Cloud Console, navigate to the "APIs & Services" section.
-2. Click on "Library" in the left-hand menu.
-3. Search for "Cloud Resource Manager API".
-4. Click on the API and then click "Enable" to activate it.
+### Step 1: Enabling the Cloud Resource Manager API
+
+Let’s enable the Cloud Resource Manager API to keep moving forward:
+
+1. Navigate to "APIs & Services" in the Google Cloud Console.
+2. Click "Library" on the left.
+3. Look up "Cloud Resource Manager API" and click on it.
+4. Activate it by clicking "Enable."
 
 ![[Pasted image 20250308020516.png]]
 
-Repeat for the following APIs :
-- Compute Engine API
-#### Step 2: Start a Tofu Project
+Also, repeat this for the **Compute Engine API**.
+
+### Step 2: Kickstart a Tofu Project
+
+It’s time to get our hands on with OpenTofu:
 
 1. Open your terminal or command prompt.
-2. Create a new directory for your Tofu project:
+2. Create a new directory for your upcoming project:
    ```bash
    mkdir my-tofu-project
    cd my-tofu-project
    ```
-3. Initialize a new Tofu project:
+3. Initialize the project with:
    ```bash
    tofu init
    ```
-4. Create a new Tofu configuration file, e.g., `main.tf`, and define your infrastructure resources.
+4. Draft a Tofu configuration, like `main.tf`, to define your resources.
 
-#### Step 3: Clone Our Repository
+### Step 3: Clone Our Repository for Quick Setup
 
-You can clone our repository to get started quickly with pre-configured scripts:
+Looking for a fast start? Cloning our repository can save you time.
 
-1. Clone the repository:
+1. Clone the repository with:
    ```bash
    git clone https://github.com/Aitbytes/Projet-Long-Infra
    ```
-2. Navigate to the `k3s-php` directory:
+2. Jump into the `k3s-php` directory:
    ```bash
    cd Projet-Long-Infra/k3s-php
    ```
-3. Follow the instructions in the `README.md` file or execute the provided scripts to set up your environment.
+3. Check out the `README.md` for further steps or run the included scripts to set up your environment.
 
->[!todo]
->Whether you which to use our script, or prefer creating yours, the following explanation on [[Provisioning|How to deploy with terraform]] will help you understand methodology.
+Whether you’re using our scripts or crafting your own, our [[Provisioning|How to deploy with Terraform]] guide will illuminate the path.
 
->[!Success]
->If you are done with deploying the cluster, now it's time to [[Configuration|Configure Kubernetes with k3s and Ansible]].
+![Tofu Project Example]
+
+Great job! If you've reached deploying the cluster, it’s time to dive into [[Configuration|Configuring Kubernetes with k3s and Ansible]]. You're on an exciting journey to mastering cloud deployments!
+

@@ -16,4 +16,4 @@ When you build Kubernetes on VMs with k3s, you’re not just following instructi
 
 **Having Fun with Kubernetes Vulnerabilities**: The fun part of these labs is discovering and exploiting vulnerabilities. By using k3s, you can tweak and even intentionally break things to see what happens. A managed service like GKE won’t let you do that—it has security and operational limits to keep everything smooth and safe, which isn't as fun when you’re trying to learn through experimentation.
 
-Ready to dig in and explore? Let's see what we can uncover together! But before anything we must first [[Setting_environement |Set up the environnement]] . 
+Ready to dig in and explore? Let's see what we can uncover together! But before we begin break things, we must first [[Setting_environement |Set up the environment]] . 
