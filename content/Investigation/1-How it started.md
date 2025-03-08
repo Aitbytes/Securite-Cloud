@@ -5,7 +5,7 @@ title: 1-How it all began
 Our journey starts with a simple and somewhat vague question: What is the current state of the art in cloud security? Here we sit, trying to figure out where this journey even begins. Cloud security is crucial—especially now, as many companies are moving their operations to the cloud. But where do we start?
 
 
-Maybe if we take it step by step, browsing through online ressources ? There’s this thing called [**Zero Trust Architecture**](https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf) that I keep reading about. It sounds like it's about not trusting anything until it's been thoroughly checked. That makes some sense, especially when you think that the old network walls are kind of not there anymore. Maybe this is a key part of cloud security today?
+Maybe if we take it step by step, browsing through online ressources ? There’s this thing called [**Zero Trust Architecture**](https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf) that we keep reading about. It sounds like it's about not trusting anything until it's been thoroughly checked. That makes some sense, especially when you think that the old network walls are kind of not there anymore. Maybe this is a key part of cloud security today?
 
 Then there's [**encryption**](https://en.wikipedia.org/wiki/Homomorphic_encryption). It’s a familiar idea, but are there new things happening here? [**Homomorphic encryption**](https://www.techtarget.com/searchsecurity/definition/homomorphic-encryption) comes to mind. It sounds like a way to work with encrypted data without exposing it. And then there are these [**quantum-resistant algorithms**](https://www.nist.gov/news-events/news/2022/07/nist-announces-first-four-quantum-resistant-cryptographic-algorithms); they might be a response to threats from quantum computing? This could be worth exploring.
 
@@ -27,6 +27,6 @@ Then there's [**confidential computing**](https://www.ibm.com/think/topics/confi
 
 Could we have missed something? Perhaps some specific technologies or recent trends? It feels complicated, with everything like Zero Trust, IAM, and AI connecting in some way. Compliance tools seem related to IAM and encryption. We kept trying to find how these pieces can fit together.
 
-Still, no coherent picture seems to form. The current art of cloud security leans on many facets : automation, integrating security throughout processes, AI helping prevent issues, and IAM becoming more advanced. We’re figuring this out together, one step at a time. Where do we head next? Maybe it is time for an actual [[2-Article Review| Article Review]]. 
+Still, no coherent picture seems to take shape. The current art of cloud security leans on many facets : automation, integrating security throughout processes, AI helping prevent issues, and IAM becoming more advanced. We’re figuring this out together, one step at a time. Where do we head next? Maybe it is time for an actual [[2-Article Review| Article Review]]. 
 
 
