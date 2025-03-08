@@ -1,5 +1,5 @@
 ---
-title: Setting up an environement
+title: 1-Setting up an environement
 ---
 ## Objective
 
@@ -36,7 +36,7 @@ Throughout the labs, we will be leveraging IaC with terraform and ansible extens
 
 ---
 
-You should have a similar entry to the following in the "IAM & Admin" > IAM section 
+You should have something similar to this following in the "IAM & Admin" > "IAM" section 
 
 ![[Pasted image 20250308020706.png]]
 As you can see, we attributed the following rôles to the service account : 
@@ -63,8 +63,6 @@ As you can see, we attributed the following rôles to the service account :
 > - Limit the use of the service account to specific tasks that absolutely require it. Avoid using it for general purposes, thereby respecting the principle of least privilege 
 
 ## Automating further deployments
-
-### Automating Further Deployments
 
 Make sure you have Terraform or OpenTofu installed. Follow the specific [instructions for Terraform](https://developer.hashicorp.com/terraform/install) or [instructions for OpenTofu](https://opentofu.org/docs/intro/install) for your system. We will be using OpenTofu as it is open-source.
 
@@ -107,3 +105,8 @@ You can clone our repository to get started quickly with pre-configured scripts:
    ```
 3. Follow the instructions in the `README.md` file or execute the provided scripts to set up your environment.
 
+>[!todo]
+>Whether you which to use our script, or prefer creating yours, the following explanation on [[Provisioning|How to deploy with terraform]] will help you understand methodology.
+
+>[!Success]
+>If you are done with deploying the cluster, now it's time to [[Configuration|Configure Kubernetes with k3s and Ansible]].

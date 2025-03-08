@@ -1,7 +1,10 @@
 ---
-title: 1-Provisioning the VMs
+title: 2-Provisioning the VMs
 ---
-Let's dive into understanding this [Terraform](https://github.com/Aitbytes/Kubernetes-At-Home/tree/gcp) code and explore how it's used to configure a cloud infrastructure on Google Cloud Platform, collaborate with Ansible for setup management, and interface with Cloudflare for DNS records—all while maintaining a secure environment. We'll break down each part so that we can see how it all fits together like pieces of a puzzle.
+Let's dive into understanding this [Terraform code](https://github.com/Aitbytes/Kubernetes-At-Home/tree/gcp) and explore how it's used to configure a cloud infrastructure on Google Cloud Platform, collaborate with Ansible for setup management, and interface with Cloudflare for DNS records—all while maintaining a secure environment. We'll break down each part so that we can see how it all fits together like pieces of a puzzle.
+
+>[!warning]
+>This is not a Terraform/OpenTofu guide. We assure you are already familiar with this technology. Otherwise, we suggest going through the tutorials on the [official website](https://developer.hashicorp.com/terraform/tutorials/gcp-get-started). 
 
 ### Setting the Stage with Terraform
 
@@ -162,8 +165,7 @@ resource "google_compute_firewall" "allow-ssh" {
                 "80",
                 "8080",
                 "6444",
-                "6443",
-                "32002"]
+                "6443"]
   }
 
   source_ranges = ["0.0.0.0/0"]
@@ -180,7 +182,7 @@ resource "google_compute_firewall" "allow-ssh" {
 
 - The `ansible.tf` file creates an **inventory** for Ansible by dynamically generating a list of hosts, both master and worker nodes, to manage configurations across our VMs.
 
-- By using a `templatefile`, it allows flexibility to adjust host lists without modifying the Ansible configuration directly, a vital practice for scaling efficiently and automatically.
+- By using a `templatefile`, it allows flexibility to adjust host lists without modifying the Ansible configuration directly, the generated inventory file will come in handy when we'll need to [[Configuration|Configure Kubernetes with k3s and Ansible]].
 
 ```yml
 all:
@@ -258,6 +260,25 @@ resource "cloudflare_record" "worker_dns" {
 }
 ```
 
-  
 By understanding each piece of this Terraform configuration, we can see how it ensures efficient deployment, management, and scaling within the cloud.
+  
+>[!info]
+>If you have written your Terraform script by yourself, you can proceed with the following steps to deploy your infrastructure:
+>
+>1. **Initialize the Terraform Project**: 
+>   - Run `terraform init` in your terminal within the directory containing your Terraform configuration files. This command initializes the project, downloads necessary provider plugins, and sets up the backend for storing state files.
+>
+>2. **Plan the Deployment**:
+>   - Use `terraform plan` to create an execution plan. This command shows you what actions Terraform will take to achieve the desired state defined in your configuration files. Review the plan to ensure it aligns with your expectations.
+>
+>3. **Apply the Configuration**:
+>   - Execute `terraform apply` to apply the changes required to reach the desired state of the configuration. Terraform will prompt you to confirm the execution plan before proceeding. Once confirmed, it will create, update, or delete resources as necessary.
+>
+>4. **Monitor and Manage**:
+   - After deployment, you can use `terraform show` to inspect the current state of your infrastructure. Use `terraform destroy` if you need to tear down the infrastructure when it's no longer needed.
+
+>[!tip]
+>   - The commands for OpenTofu are similar to those of Terraform. For example, you can use `tofu init`, `tofu plan`, `tofu apply`, and `tofu destroy` in place of their Terraform counterparts. This makes transitioning between the two tools seamless.
+>
+
 
