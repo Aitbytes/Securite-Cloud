@@ -1,5 +1,5 @@
 ---
-title: 4-Attack Scenario
+title: 3-Attack Scenario
 ---
 
 We're going to explore an engaging scenario that unfolds within a Kubernetes cluster, beginning with the knowledge of a domain name.
